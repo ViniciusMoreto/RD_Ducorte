@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/agendar.css" />
+    <title>Agendamento | Barbearia RD Ducorte</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <a href="./index.html"><img src="./img/logo_120px.svg" alt="Logo RD Ducorte" class="logo" width="120px"></a>
+      <nav>
+        <ul class="menu">
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./sobrenos.html">Sobre Nós</a></li>
+          <li><a href="./agendar.html">Agendar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="agendamento_container">
+      <h1>Agende Seu Corte</h1>
+
+      <p class="subtext_whatsapp">
+        ⏰ <b>O horário exato será combinado pelo WhatsApp após o envio.</b>
+      </p>
+
+      <form id="form-agendamento">
+        <label>Nome Completo</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required />
+
+        <label>Telefone</label>
+        <input
+          type="text"
+          id="telefone"
+          placeholder="(00) 00000-0000"
+          maxlength="15"
+          required
+        />
+
+        <label>Dia desejado</label>
+        <input
+          type="text"
+          id="data"
+          placeholder="DD/MM/AAAA"
+          maxlength="10"
+          required
+        />
+
+        <label>Observações (opcional)</label>
+        <textarea
+          id="obs"
+          rows="4"
+          placeholder="Algo que gostaria de informar?"
+        ></textarea>
+
+        <div class="servicos-container">
+          <!-- CORTE -->
+          <h2 class="categoria-titulo">Cortes</h2>
+
+          <div class="servicos-grid">
+            <label class="card-servico">
+              <div class="card-left">
+                <!-- observe: mantive data-preco em todos os inputs -->
+                <input type="checkbox" value="Corte Normal" data-preco="35" />
+                <span>Corte Normal</span>
+              </div>
+              <div class="card-preco">R$ 35</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Corte Navalhado" data-preco="40" />
+                <span>Corte Navalhado</span>
+              </div>
+              <div class="card-preco">R$ 40</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Pezinho" data-preco="15" />
+                <span>Pezinho</span>
+              </div>
+              <div class="card-preco">R$ 15</div>
+            </label>
+          </div>
+
+          <!-- BARBA -->
+          <h2 class="categoria-titulo">Barba</h2>
+
+          <div class="servicos-grid">
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Barba" data-preco="25" />
+                <span>Barba</span>
+              </div>
+              <div class="card-preco">R$ 25</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input
+                  type="checkbox"
+                  value="Barba Pigmentada"
+                  data-preco="15"
+                />
+                <span>Barba Pigmentada</span>
+              </div>
+              <div class="card-preco">R$ 15</div>
+            </label>
+          </div>
+
+          <!-- PIGMENTAÇÃO / DETALHES -->
+          <h2 class="categoria-titulo">Detalhes</h2>
+
+          <div class="servicos-grid">
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Pigmentação" data-preco="30" />
+                <span>Pigmentação</span>
+              </div>
+              <div class="card-preco">R$ 30</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Risquinho" data-preco="5" />
+                <span>Risquinho</span>
+              </div>
+              <div class="card-preco">R$ 5</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Sobrancelha" data-preco="5" />
+                <span>Sobrancelha</span>
+              </div>
+              <div class="card-preco">R$ 5</div>
+            </label>
+          </div>
+
+          <!-- QUÍMICAS -->
+          <h2 class="categoria-titulo">Químicas</h2>
+
+          <div class="servicos-grid">
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Luzes" data-preco="80" />
+                <span>Luzes</span>
+              </div>
+              <div class="card-preco">R$ 80</div>
+            </label>
+
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Nevou" data-preco="130" />
+                <span>Nevou</span>
+              </div>
+              <div class="card-preco">R$ 130</div>
+            </label>
+          </div>
+
+          <!-- FINALIZAÇÃO -->
+          <h2 class="categoria-titulo">Finalização</h2>
+
+          <div class="servicos-grid">
+            <label class="card-servico">
+              <div class="card-left">
+                <input type="checkbox" value="Gel" data-preco="20" />
+                <span>Gel</span>
+              </div>
+              <div class="card-preco">R$ 20</div>
+            </label>
+          </div>
+        </div>
+
+        <h2 class="categoria-titulo">Total</h2>
+
+        <div class="card-servico" style="justify-content: space-between;">
+          <span style="color: #fff; font-size: 17px; font-weight: 600;">Preço Total:</span>
+          <span id="preco-total" style="color: #b38e3c; font-size: 18px; font-weight: 700;">R$ 0,00</span>
+        </div>
+
+        <button type="submit" class="btn-agendar">Enviar no WhatsApp</button>
+      </form>
+    </div>
+
+    <script>
+      // Aguarda o DOM
+      document.addEventListener("DOMContentLoaded", () => {
+
+        // Seleciona todos os checkboxes que possuem data-preco
+        const checkboxes = Array.from(document.querySelectorAll("input[type='checkbox'][data-preco]"));
+        const precoEl = document.getElementById("preco-total");
+
+        function atualizarTotal() {
+          let total = 0;
+          checkboxes.forEach(cb => {
+            if (cb.checked) {
+              // parseFloat para aceitar decimais se precisar
+              const preco = parseFloat(cb.getAttribute("data-preco")) || 0;
+              total += preco;
+            }
+          });
+
+          // Formata com vírgula
+          precoEl.textContent = "R$ " + total.toFixed(2).replace(".", ",");
+          return total;
+        }
+
+        // adiciona listeners
+        checkboxes.forEach(cb => cb.addEventListener("change", atualizarTotal));
+
+        // atualiza logo que carrega
+        atualizarTotal();
+
+        /* Máscara de data */
+        const dataInput = document.getElementById("data");
+        dataInput.addEventListener("input", () => {
+          let v = dataInput.value.replace(/\D/g, "");
+          if (v.length > 2 && v.length <= 4) v = v.replace(/(\d{2})(\d+)/, "$1/$2");
+          else if (v.length > 4) v = v.replace(/(\d{2})(\d{2})(\d+)/, "$1/$2/$3");
+          dataInput.value = v;
+        });
+
+        /* Máscara telefone */
+        const telInput = document.getElementById("telefone");
+        telInput.addEventListener("input", () => {
+          let v = telInput.value.replace(/\D/g, "");
+
+          if (v.length > 11) v = v.slice(0, 11); // limita no máximo 11 dígitos
+
+          if (v.length <= 2) {
+            v = `(${v}`;
+          } else if (v.length <= 7) {
+            v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+          } else {
+            v = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+          }
+
+          telInput.value = v;
+        });
+
+        /* Enviar para WhatsApp */
+document.getElementById("form-agendamento").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
+  const data = document.getElementById("data").value;
+  const obs = document.getElementById("obs").value.trim();
+
+  // serviços selecionados
+  const servicos = [...document.querySelectorAll("input[type='checkbox']:checked")].map(s => s.value);
+
+  // pega total atualizado (número)
+  const totalNumero = atualizarTotal();
+  const totalFormatado = "R$ " + totalNumero.toFixed(2).replace(".", ",");
+
+  let msg = `
+*AGENDAMENTO RD DUCORTE*
+
+Nome: ${nome}
+Telefone: ${telefone}
+Data desejada: ${data}
+Serviços: ${servicos.join(", ")}
+Preço total: ${totalFormatado}
+`;
+
+  // só adiciona observação se não estiver vazia
+  if (obs !== "") {
+    msg += `Observações: ${obs}\n`;
+  }
+
+  const url = "https://wa.me/5519997519981?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
+});
+      }); // DOMContentLoaded
+    </script>
+  </body>
+</html>

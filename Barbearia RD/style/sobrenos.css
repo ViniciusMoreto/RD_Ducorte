@@ -1,0 +1,421 @@
+@import url(https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap);
+
+/* PALETA */
+:root {
+    --preto: #000000;
+    --grafite: #111111;
+    --grafite-suave: #1A1A1A;
+    --branco: #FFFFFF;
+    --texto-branco: #FFFFFF;
+    --texto-cinza-claro: #E6E6E6;
+    --dourado: #C6A667;
+    --dourado-rgba: rgba(179, 142, 60, 1);
+    --dourado-escuro: #B38E3C;
+    --cinza-suave: #CCCCCC;
+    --cinza-medio: #7A7A7A;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--preto);
+    color: var(--texto-branco);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 22px 60px;
+    background: var(--preto);
+    border-bottom: 1px solid rgba(198, 166, 103, 0.4);
+    box-shadow: 0 -5px 20px var(--dourado-rgba);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 120px;          
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    color: var(--texto-branco);
+    font-size: 19px;
+    transition: 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--dourado);
+    transition: width 0.35s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* SEÇÃO SOBRE — PREMIUM, MODERNA, BARBEARIA */
+.sobre {
+    background: var(--grafite-suave);
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* textura sutil no fundo */
+.sobre::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 70%);
+    opacity: 0.3;
+}
+
+/* container central com efeito premium */
+.sobre-estilizado {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    padding: 70px 60px;
+    background: linear-gradient(135deg, #0d0d0d, #181818);
+    border: 1px solid rgba(198, 166, 103, 0.3);
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.7),
+        inset 0 0 20px rgba(198, 166, 103, 0.12),
+        0 0 50px rgba(198, 166, 103, 0.05);
+}
+
+/* brilho dourado suave ao redor */
+.sobre-estilizado::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, transparent, rgba(198,166,103,0.2), transparent);
+    z-index: -1;
+}
+
+/* subtítulo */
+.sobre-subtitulo {
+    font-family: 'Oswald', sans-serif;
+    color: var(--dourado);
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    opacity: 0.85;
+}
+
+/* título principal */
+.sobre-titulo {
+    font-family: 'Anton', sans-serif;
+    color: var(--dourado);
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 18px rgba(198, 166, 103, 0.2);
+}
+
+/* linha dourada especial */
+.linha-dourada {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+    margin: 0 auto 40px auto;
+    border-radius: 50px;
+    box-shadow: 0 0 12px rgba(198,166,103,0.4);
+}
+
+/* frase destaque */
+.texto-destaque {
+    font-size: 22px;
+    color: var(--texto-cinza-claro);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 45px;
+    opacity: 0.95;
+}
+
+/* grid com os parágrafos */
+.sobre-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.sobre-grid p {
+    font-size: 18px;
+    color: var(--texto-cinza-claro);
+    line-height: 1.9;
+    opacity: 0.92;
+}
+
+.sobre-grid strong {
+    color: var(--dourado);
+    font-weight: 700;
+}
+
+/* animação suave ao aparecer */
+.sobre-estilizado {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 1.2s ease forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER */
+.footer {
+    background: var(--preto);
+    text-align: center;
+    padding: 30px;
+ 
+    border-top: 1px solid rgba(198,166,103,0.4);
+}
+
+.footer p {
+    color: var(--texto-cinza-claro);
+    font-size: 15px;
+}
+
+/* BOTÕES FLUTUANTES */
+.whatsapp_btn,
+.instagram_btn {
+    position: fixed;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+    transition: 0.3s ease;
+}
+
+.whatsapp_btn { bottom: 95px; }
+.instagram_btn { bottom: 25px; }
+
+.whatsapp_btn img,
+.instagram_btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whatsapp_btn:hover,
+.instagram_btn:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 992px) {
+
+    .header {
+        padding: 18px 35px;
+    }
+
+    .menu {
+        gap: 25px;
+    }
+
+    .sobre-estilizado {
+        padding: 55px 40px;
+    }
+
+    .sobre-titulo {
+        font-size: 50px;
+    }
+
+    .texto-destaque {
+        font-size: 20px;
+    }
+
+    .sobre-grid p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        padding: 15px 25px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 17px;
+    }
+
+    .logo {
+        width: 95px;
+    }
+
+    /* SOBRE */
+    .sobre {
+        padding: 70px 0;
+    }
+
+    .sobre-estilizado {
+        padding: 45px 30px;
+        width: 92%;
+    }
+
+    .sobre-titulo {
+        font-size: 42px;
+        letter-spacing: 1px;
+    }
+
+    .sobre-subtitulo {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .linha-dourada {
+        width: 150px;
+    }
+
+    .texto-destaque {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .sobre-grid {
+        gap: 18px;
+    }
+
+    .sobre-grid p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* BOTÕES FLUTUANTES */
+    .whatsapp_btn,
+    .instagram_btn {
+        width: 35px;
+        height: 35px;
+        right: 18px;
+    }
+
+    .whatsapp_btn { bottom: 85px; }
+    .instagram_btn { bottom: 20px; }
+}
+
+@media (max-width: 480px) {
+
+    /* HEADER */
+    .header {
+        padding: 15px 15px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    /* SOBRE */
+    .sobre-estilizado {
+        padding: 35px 22px;
+        width: 90%;
+        border-radius: 16px;
+    }
+
+    .sobre-titulo {
+        font-size: 34px;
+        margin-bottom: 18px;
+    }
+
+    .sobre-subtitulo {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .linha-dourada {
+        width: 110px;
+        height: 3px;
+    }
+
+    .texto-destaque {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .sobre-grid p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* BOTÕES FLUTUANTES */
+    .whatsapp_btn,
+    .instagram_btn {
+        width: 32px;
+        height: 32px;
+        right: 15px;
+    }
+
+    .whatsapp_btn { bottom: 75px; }
+    .instagram_btn { bottom: 15px; }
+
+    /* FOOTER */
+    .footer p {
+        font-size: 13px;
+    }
+}

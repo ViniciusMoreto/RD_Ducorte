@@ -1,0 +1,604 @@
+@import url(https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap);
+
+/* PALETA */
+:root {
+    --preto: #000000;
+    --grafite: #111111;
+    --grafite-suave: #1A1A1A;
+    --branco: #FFFFFF;
+    --texto-branco: #FFFFFF;
+    --texto-cinza-claro: #E6E6E6;
+    --dourado: #C6A667;
+    --dourado-rgba: rgba(179, 142, 60, 1);
+    --dourado-escuro: #B38E3C;
+    --cinza-suave: #CCCCCC;
+    --cinza-medio: #7A7A7A;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--preto);
+    color: var(--texto-branco);
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 22px 60px;
+    background: var(--preto);
+    border-bottom: 1px solid rgba(198, 166, 103, 0.4);
+    box-shadow: 0 -5px 20px var(--dourado-rgba);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 120px;          
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    color: var(--texto-branco);
+    font-size: 19px;
+    transition: 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--dourado);
+    transition: width 0.35s ease;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--preto);
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+}
+
+.hero-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.textos_principais {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero h2 {
+    font-size: 54px;
+    font-family: 'Anton', sans-serif;
+    color: var(--dourado);
+    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 12px;
+    color: var(--texto-cinza-claro);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+
+/* BOTÃO */
+.btn {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: var(--preto);
+    overflow: hidden;
+    background: var(--dourado);
+    border-radius: 6px;
+    border: 2px solid var(--dourado);
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--dourado-escuro);
+    z-index: -1;
+    transition: width 0.9s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: var(--preto);
+}
+
+
+/* SEÇÃO SERVIÇOS */
+.servicos {
+    padding: 90px 40px;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-family: 'Anton', sans-serif;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: var(--dourado);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--grafite-suave);
+    width: 310px;
+    padding: 40px 25px;
+    border: 1px solid rgba(198, 166, 103, 0.4);
+    border-radius: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--dourado);
+}
+
+.card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 27px;
+    margin-bottom: 18px;
+    color: var(--dourado);
+}
+
+.card p {
+    color: var(--texto-cinza-claro);
+    font-size: 17px;
+}
+
+.tabela-servicos {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #111;
+  border: 1px solid rgba(179, 142, 60, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(179, 142, 60, 0.2);
+}
+
+.item-servico {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+}
+
+.item-servico strong {
+  color: #B38E3C; /* Dourado */
+}
+
+.item-servico:last-child {
+  border-bottom: none;
+}
+
+/* AGENDAMENTO */
+.agendamento {
+    padding: 90px 40px;
+    text-align: center;
+    background: var(--grafite-suave);
+    border-top: 1px solid rgba(198, 166, 103, 0.3);
+    border-bottom: 1px solid rgba(198, 166, 103, 0.3);
+    margin-top: 60px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.step {
+    background: var(--grafite);
+    width: 260px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(198,166,103,0.3);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    border-color: var(--dourado);
+}
+
+.step .numero {
+    width: 50px;
+    height: 50px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.step h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--dourado);
+}
+
+.step p {
+    color: var(--texto-cinza-claro);
+    font-size: 16px;
+}
+
+/* BOTÃO DE AGENDAMENTO */
+.btn-agendamento {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 15px 45px;
+    font-size: 20px;
+    background: var(--dourado);
+    color: var(--preto);
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px rgba(198,166,103,0.3);
+}
+
+.btn-agendamento:hover {
+    background: var(--dourado-escuro);
+    color: var(--branco);
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--preto);
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(198,166,103,0.4);
+}
+
+.footer p {
+    color: var(--texto-cinza-claro);
+    font-size: 15px;
+}
+
+/* BOTÕES FLUTUANTES */
+.whatsapp_btn,
+.instagram_btn {
+    position: fixed;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+    transition: 0.3s ease;
+}
+
+.whatsapp_btn { bottom: 95px; }
+.instagram_btn { bottom: 25px; }
+
+.whatsapp_btn img,
+.instagram_btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whatsapp_btn:hover,
+.instagram_btn:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 40px;
+    }
+
+    .menu {
+        gap: 25px;
+    }
+
+    .logo {
+        width: 110px;
+    }
+
+    .hero {
+        height: 430px;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 19px;
+    }
+
+    .cards {
+        gap: 28px;
+    }
+
+    .servicos {
+        padding: 70px 30px;
+    }
+
+    .agendamento {
+  text-align: center; 
+  width: 100%;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;        
+  gap: 2rem;
+  flex-wrap: wrap;           
+  margin-top: 2rem;
+}
+
+/* Cada step */
+.step {
+  max-width: 300px;
+  text-align: center;         
+}
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 25px;
+    }
+
+    .logo {
+        width: 95px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 17px;
+    }
+
+    .hero {
+        height: 380px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 90%;
+    }
+
+    .btn {
+        padding: 12px 35px;
+        font-size: 18px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 330px;
+    }
+
+    .servicos {
+        padding: 60px 20px;
+    }
+
+    .steps-container {
+    flex-direction: column; 
+    align-items: center;     
+  }
+
+  .step {
+    width: 90%;              
+  }
+
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        width: 85px;
+    }
+
+    .menu {
+        gap: 14px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .btn-agendamento {
+        font-size: 18px;
+        padding: 13px 35px;
+    }
+}
+
+@media (max-width: 420px) {
+    .header {
+        padding: 14px 16px;
+    }
+
+    .logo {
+        width: 75px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 280px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 28px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .item-servico {
+        font-size: 1rem;
+    }
+
+    .step {
+        padding: 25px;
+    }
+
+    .btn-agendamento {
+        width: 100%;
+    }
+
+    .whatsapp_btn, .instagram_btn {
+        width: 35px;
+        height: 35px;
+        right: 18px;
+    }
+
+    .whatsapp_btn {
+        bottom: 90px;
+    }
+
+    .instagram_btn {
+        bottom: 20px;
+    }
+}

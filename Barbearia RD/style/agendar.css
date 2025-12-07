@@ -1,0 +1,340 @@
+@import url(https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500;600&display=swap);
+
+:root {
+  --gold: #B38E3C;
+  --gold-light: #d1a75c;
+  --black: #000000;
+  --gray-dark: #141414;
+  --gray: #cfcfcf;
+  --white: #fff;
+}
+
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 22px 60px;
+    background: var(--black);
+    border-bottom: 1px solid rgba(198, 166, 103, 0.4);
+    box-shadow: 0 -5px 20px rgba(179, 142, 60, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 120px;          
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    color: var(--texto-branco);
+    font-size: 19px;
+    transition: 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.35s ease;
+}
+
+.menu a:hover {
+    color: var(--gold);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* CONTAINER */
+.agendamento_container {
+  max-width: 650px;
+  background: var(--gray-dark);
+  margin: 2rem auto;
+  padding: 2.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(179, 142, 60, 0.3);
+  box-shadow: 0 0 18px rgba(179, 142, 60, 0.12);
+}
+
+h1 {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.subtext_whatsapp {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  font-size: 0.9rem;
+  background: rgba(179, 142, 60, 0.1);
+  padding: 10px 16px;
+  border-left: 3px solid var(--gold);
+  border-radius: 8px;
+  color: var(--gray);
+}
+
+/* FORM */
+label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  display: block;
+  color: var(--gray);
+}
+
+input,
+textarea {
+  width: 100%;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--white);
+  margin-bottom: 1rem;
+  transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* TITULOS */
+.categoria-titulo {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--gold);
+  font-weight: 600;
+  border-left: 4px solid var(--gold);
+  padding-left: 8px;
+}
+
+/* GRID */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* CARDS */
+.card-servico {
+  background: #111;
+  border: 1px solid rgba(179, 142, 60, 0.4);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  transition: 0.2s;
+}
+
+.card-servico:hover {
+  transform: translateY(-3px);
+  border-color: #b38e3c;
+}
+
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-left input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  transform: translateY(8px);
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 16px;
+}
+
+.card-text span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.card-preco {
+  color: #b38e3c;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 1.5rem;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: var(--gold-light);
+}
+
+/* FOOTER */
+.footer {
+  background: #0d0d0d;
+  text-align: center;
+  padding: 30px;
+  margin-top: 80px;
+  border-top: 1px solid rgba(198,166,103,0.4);
+}
+
+.footer p {
+  color: #cfcfcf;
+  font-size: 15px;
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .logo {
+    width: 105px;
+  }
+
+  .header {
+    padding: 20px 30px;
+  }
+
+  .menu {
+    gap: 25px;
+  }
+
+  .agendamento_container {
+    max-width: 85%;
+    padding: 1.7rem;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 600px) {
+  .logo {
+    width: 90px;
+  }
+
+  .header {
+    padding: 18px 20px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .menu {
+    gap: 18px;
+  }
+
+  .menu a {
+    font-size: 16px;
+  }
+
+  .servicos-grid {
+    grid-template-columns: 1fr; /* vira 1 coluna */
+  }
+
+  .card-servico {
+    height: auto;
+    padding: 14px 16px;
+  }
+
+  .card-left span {
+    font-size: 14px;
+  }
+
+  .card-preco {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 420px) {
+  .logo {
+    width: 75px;
+  }
+
+  .header {
+    padding: 16px 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .menu {
+    gap: 12px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  .agendamento_container {
+    padding: 1.3rem;
+  }
+}
